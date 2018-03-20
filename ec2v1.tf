@@ -10,13 +10,14 @@ provider "aws" {
 }
 
 
-lifecycle {
-#  create_before_destroy = false
- prevent_destroy = true
-}
+
 
 #Configure the AWS EC2resource
 resource "aws_instance" "instance1" {
+  lifecycle {
+#  create_before_destroy = false
+    prevent_destroy = true
+  }
   ami = "ami-26ebbc5c"
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
@@ -30,6 +31,10 @@ resource "aws_instance" "instance1" {
 
 #Configure the AWS EC2resource
 resource "aws_instance" "instance3" {
+  lifecycle {
+#  create_before_destroy = false
+    prevent_destroy = true
+  }
   ami = "ami-26ebbc5c"
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
@@ -43,6 +48,10 @@ resource "aws_instance" "instance3" {
 
 #Configure the AWS EC2resource
 resource "aws_instance" "instance4" {
+  lifecycle {
+#  create_before_destroy = false
+    prevent_destroy = true
+  }
   ami = "ami-26ebbc5c"
   instance_type = "t2.micro"
   availability_zone = "us-east-1a"
