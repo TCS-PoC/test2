@@ -9,6 +9,12 @@ provider "aws" {
   region = "us-east-1"
 }
 
+
+lifecycle {
+#  create_before_destroy = false
+ prevent_destroy = true
+}
+
 #Configure the AWS EC2resource
 resource "aws_instance" "instance1" {
   ami = "ami-26ebbc5c"
@@ -48,7 +54,3 @@ resource "aws_instance" "instance4" {
   }
 }
 
-lifecycle {
-#  create_before_destroy = false
- prevent_destroy = true
-}
