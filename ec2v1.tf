@@ -47,3 +47,8 @@ resource "aws_instance" "instance4" {
     Name = "hostTerraform4"
   }
 }
+
+lifecycle {
+#  create_before_destroy = false
+ prevent_destroy = true
+}
