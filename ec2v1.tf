@@ -16,7 +16,8 @@ provider "aws" {
 resource "aws_instance" "instance1" {
   lifecycle {
 #  create_before_destroy = false
-    prevent_destroy = true
+ #   prevent_destroy = true
+     igonre_changes = ["security_groups"]
   }
   ami = "ami-26ebbc5c"
   instance_type = "t2.micro"
@@ -33,7 +34,8 @@ resource "aws_instance" "instance1" {
 resource "aws_instance" "instance3" {
   lifecycle {
 #  create_before_destroy = false
-    prevent_destroy = true
+ #   prevent_destroy = true
+     igonre_changes = ["security_groups"]
   }
   ami = "ami-26ebbc5c"
   instance_type = "t2.micro"
@@ -50,7 +52,8 @@ resource "aws_instance" "instance3" {
 resource "aws_instance" "instance4" {
   lifecycle {
 #  create_before_destroy = false
-    prevent_destroy = true
+ #   prevent_destroy = true
+     igonre_changes = ["security_groups"]
   }
   ami = "ami-26ebbc5c"
   instance_type = "t2.micro"
